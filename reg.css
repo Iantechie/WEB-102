@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background-image: url('regg.jpg');
+    background-size: cover; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: .9;
+
+}
+.form-reg{
+    display: block;
+    text-align: center;
+    /* justify-content: center; */
+    margin: 7px 5px ;
+    
+
+}
+.reg-form{
+    padding: 1em;
+    border: 1px solid crimson;
+    margin: 2px 16em;
+    margin-top: 0.8em;
+    height: 390px;
+    background-color: #a39393;
+    border-radius: 7.8px;
+    /* opacity: .9; */
+
+}
+input{
+    padding: 10px 25px;
+    margin: 3px;
+    justify-content: center;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color: #685dc4;
+    
+}
+
+input:focus{
+    border-bottom: 2px solid #9662b8; 
+    
+}
+.input-group{
+    background-color: aqua;
+    color:#000;
+}
+a{
+    text-decoration: none;
+}
+.btn{
+    margin-top: .3em;
+    padding: 13px 27px;
+    font-size: .8em;
+    border-radius: 2em;
+    background-color: #9662b8;
+    color: rgb(213, 231, 213);
+    cursor: pointer;
+
+}
+.btn-1{
+    padding:10px 20px;
+    font-size: .8em ;
+    background-color: #685dc4;
+    color: white;
+    border-radius: 1.6rem;
+    border: none;
+    margin-top: 2em;
+    margin-left: 3px;
+    cursor: pointer;
+}
+.btn-1:focus{
+    background-color: crimson;
+    transition: .3s;
+
+}

@@ -1,0 +1,11 @@
+
+.navside{
+    background-color: rgb(214, 197, 231);
+    border: 2px solid red;
+    width: 20%;
+    padding: 10px;
+}
+.navside li{
+    padding: 10px;
+    text-align: center;
+}

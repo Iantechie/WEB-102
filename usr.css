@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url('small.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    
+
+}
+.form-reg{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    margin: 9px 5px ;
+}
+.reg-form{
+    padding: 1em;
+    /* border: 2px solid crimson; */
+    margin: 2px 16em;
+    margin-top: 2em;
+    height: 350px;
+    background-color: #a39393;;
+    opacity: .9;
+}
+input{
+    padding: 12px 25px;
+    margin: 4px;
+    margin-top: 1.8em;
+    justify-content: center;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+     
+}
+input:focus{
+    border-bottom: #892ac9; 
+    
+}
+a{
+    text-decoration: none;
+}
+.btn{
+    margin-top: 2em;
+    padding: 13px 23px;
+    font-size: .8em;
+    border-radius: 2em;
+    background-color: #5349ac;
+    color: rgb(213, 231, 213);
+    cursor: pointer;
+}
+.btn-1{
+    padding:12px 19px;
+    font-size: 1em ;
+    color: rgb(213, 231, 213,);
+    background-color: #4e00df;
+    color: #f1f1f1;
+    border-radius: 1.8rem;
+    border: none;
+    margin-top: 3em;
+    margin: 2em;
+    opacity: .8;
+
+    
+    cursor: pointer;
+}
+.btn-1:hover{
+    background-color: rgb(250, 245, 246);
+    color: black;
+    transition: .3s;
+    
+
+
+}
+.Btns{
+    /* display: inline; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 400px;
+    margin: 10px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Complainer Home Page</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+	<link href="complainer_page.css" rel="stylesheet" type="text/css" media="all" />
+  <link rel="stylesheet" href="reg.css">
+	<?php
+    session_start();
+    if(!isset($_SESSION['x']))
+        header("location:inchargelogin.php");
+    
+    $con=mysqli_connect('localhost','root','','crime_portal');
+    if(!$con)
+    {
+        die('could not connect: '.mysqli_error());
+    }
+     mysqli_select_db($con,"crime_portal");
+    
+    $i_id=$_SESSION['email'];
+
+    $result1=mysqli_query($con,"SELECT location FROM police_station where i_id='$i_id'");
+      
+    $q2=mysqli_fetch_assoc($result1);
+    $location=$q2['location'];
+    
+if(isset($_POST['s'])){
+    
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $p_name=$_POST['police_name'];
+        $p_id=$_POST['police_id'];
+        $spec=$_POST['police_spec'];
+        $p_pass=$_POST['password'];
+
+    $reg="insert into police values('$p_name','$p_id','$spec','$location','$p_pass')";
+    
+        $res=mysqli_query($con,$reg);
+        if(!$res)
+         {
+          $message = "User already Exists.";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+        else
+        {
+          $message = "Police Added Successfully";
+          echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+    }
+}
+?>
+</head>
+
+<body style="background-size: cover;
+    background-image: url(home_bg1.jpeg);
+    background-position: center;">
+
+  <div class="container">
+    
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="official_login.php">Official Login</a></li>
+        <li><a href="incharge_view_police.php">Incharge Home</a></li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="police_add.php">Log Police Officer</a></li>
+        <li><a href="Incharge_complain_page.php">Complaint History</a></li>
+        <li><a href="inc_logout.php">Logout &nbsp <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </div>
+ 
+<div class="video" style="margin-top: 5%"> 
+	<div class="center-container">
+		 <div class="bg-agile">
+			<br><br>
+			<div class="login-form">
+        <p><h2>Log Police Officer</h2></p><br>	
+				<form action="#" method="post" style="color: black">
+					<input type="text"  name="police_name" placeholder="Police Name" required id="pname" />
+					<input type="text"  name="police_id" placeholder="Police Id" required id="pid"/>
+          <input type="text"  name="police_spec" placeholder="Specialist" id="pspec" required />
+                    
+          <input type="text" required  name="location" disabled value="<?php echo "$location"; ?>">
+          <br>
+					<input type="text"  name="password" placeholder="Password" id="pas" required/>
+					<button value="Submit" name="s" class="btn" style="width:100%;">Add</button>
+				</form>	
+			</div>	
+		</div>
+	</div>	
+</div>	
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+ <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
